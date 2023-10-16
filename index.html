@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Japanese Learning Apps
+
+<br>
+
+
+
+<div style="display: flex; flex-direction: row; gap: 4rem; align-items: center">
+<h4 style="font-style: italic; color: tomato">ELSC 2023</h4> <p style="padding-bottom: 1rem; font-size: 30px">Justin Coward</p>
+
+</div>
+</div>
+
+<aside class="notes"><p>check this site too 
+<a href="https://app-liv.jp/education/languages/2450/">【2023年】日本語の勉強（外国人向け）アプリおすすめランキングTOP10 | 無料/iPhone/Androidアプリ - Appliv (app-liv.jp)</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=genba_no_nihongo.mobileapp&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">げんばのにほんご GENBA NO NIHONGO - Apps on Google Play</a></p>
+<p><a href="https://stepupnihongo.com/site/support">https://stepupnihongo.com/site/support</a></p>
+<p><a href="https://japanese-bank.com/info-for-businessowner-recruiter/online-nihongo-education-service-for-foreigner/">【2022年】外国人人材向けのオンライン日本語教育サービス10選 | 日本語教師キャリア マガジン（旧称：日本語情報バンク） (japanese-bank.com)</a></p>
+<p><a href="http://nihongo.incul.com/">スーパー日本語｜Home (incul.com)</a> BJT</p>
+<ul>
+<li>Sakura Program participants (3 - 4 year) are n4 - n3</li>
+<li><a href="https://duoplanet.com/duolingo-japanese-review/">further Duolingo info </a></li>
+<li>BlueStacks for emulation</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style>
+
+h2 {
+padding-top: 2rem
+}
+li {
+font-size: 30px 
+}
+
+</style>
+
+## Student Profile
+
+- 3rd and 4th year university students
+- JLPT N4 - N3 (base)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [げんばのにほんご](https://www.otit.go.jp/kyozai/)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Job preparation and specific industries
+- Japanese government support
+- Multiple languages
+- [PDF overview](https://www.otit.go.jp/files/user/%E3%80%90%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%80%91%E6%97%A5%E6%9C%AC%E8%AA%9E%E6%95%99%E8%82%B2%E3%82%A2%E3%83%97%E3%83%AA%E3%83%AA%E3%83%BC%E3%83%95%E3%83%AC%E3%83%83%E3%83%882023.pdf)
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- Free?
+- Bad reviews
+- JLPT 4 level and up
+- No JLPT specific content
+- No customization
+- No class management
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [Step Up Nihongo](https://stepupnihongo.com/site/esun)
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Multi Language
+- Online classes available 
+- Speaking practice
+- Certification
+- Japanese company
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- Expensive (27,000/6 months; 49, 500 with online classes)
+- Not JLPT related
+- Looks very basic
+- No customization
+- Not sure if the classes are in different languages
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [スーパー日本語](http://nihongo.incul.com/)
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Good for preparing for the [BJT](https://www.kanken.or.jp/bjt/english/)
+- [Japanese company](http://nihongo.incul.com/kigyou.html)
+- Has JLPT content
+- All online
+- Has study [abroad content](http://nihongo.incul.com/course.html#ajcouse)
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- No speaking
+- Only Japanese and English
+- Looks outdated
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [Duolingo](https://www.duolingo.com/)
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Extremely popular
+- "Fun" and "Styled"
+- [Researched](https://www.duolingo.com/efficacy)
+- Learn by doing
+- [Duolingo for Schools](https://schools.duolingo.com/)
+- Multiple languages
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- Childish
+- No course customization
+- [Paid plan for best features](https://www.duolingo.com/super)
+- No "real world" practice
+- Mostly multiple choice
+- No JLPT content
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [Memrise](https://www.memrise.com/) 
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- AI speaking practice
+- [Real native speakers](https://www.memrise.com/en/learn-japanese/japanese-course/140/society)
+- Watch videos -> learn -> review -> practice
+- Some free content
+- Custom courses
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+-  [Need to pay for all videos and content](https://app.memrise.com/payment/plans)
+- Other languages limited content
+- Mostly multiple choice
+- No class management feature
+- No JLPT content
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [日本語の森](https://nihongonomori.com/about-us)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- JLPT Levels (N3 -> N1)
+- Web and Smartphone app
+- All in Japanese
+- Professional teacher
+- Also [on youtube](https://www.youtube.com/watch?v=dUk38cYzGYo)
+- [Ask the teacher questions](https://nihongonomori.com/plan/one-year)
+
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+-  [10, 000 / year](https://nihongonomori.com/plan/one-year)
+- Only business Japanese conversation practice
+- N3 and above
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [Bunpro](https://bunpro.jp/)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Focused on grammar
+- Great app
+- N5 ~ N1
+
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- Only grammar
+- 6000 / year
+- Only in English
+
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [FluentU](https://www.fluentu.com/japanese/)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Real videos and movies
+- Quizes and reviews
+- Speaking quiz?
+
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- No free version
+- 3500 / month ;  12000 / year
+- No student tracking
+- Only in English
+
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [WaniKani](https://www.wanikani.com/)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- Covers all Japanese levels
+- Science backed
+- Very good for reading kanji
+
+</div>
+<div class="" style="" >
+
+**Drawbacks**:
+- Everyone starts from the beginning (even advanced learners)
+- Takes a long time
+- Focused on Kanji and reading only
+- 1200 / month ; 9500 / year
+- Only in English
+</div>
+
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Summary
+
+- There are no *ATR BRIX* systems for Japanese learning
+- *Duolingo* has a "classroom" feature which can be managed by a teacher
+- *日本語の森* is the most detailed online service made specifically for the JLPT
+- *Memrise* has the widest variety of topics
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Recommendations
+
+- Have a selection of recommended Apps  
+- Different language levels use our recommended app (based on level)
+- Japanese tutor / teacher contract for conversation - testing - assessment
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## [News Space](https://newspacejp.vercel.app/)
+
+
+<split even gap="2" style="text-align: left">
+<div class="" style="" >
+
+**Benefits** : 
+- A custom app made to learn Japanese and English while reading real news
+- Community of users
+- Easy to review
+- 100% Free
+
+</div>
+
+<div class="" style="" >
+
+**Drawbacks**:
+- Almost finished
+- No vocabulary list yet
+- Some things don't look good on mobile phone
+</div>
+
+</split>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
